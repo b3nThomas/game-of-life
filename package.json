@@ -1,26 +1,26 @@
 {
-  "name": "game-of-life",
-  "version": "1.0.0",
-  "description": "My attempt at the Game of Life",
-  "main": "game.js",
-  "scripts": {
-    "test": "npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/b3nThomas/game-of-life.git"
-  },
-  "keywords": [
-    "tdd",
-    "ava",
-    "typescript",
-    "scss",
-    "animation"
-  ],
-  "author": "b3nThomas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/b3nThomas/game-of-life/issues"
-  },
-  "homepage": "https://github.com/b3nThomas/game-of-life#readme"
+    "name": "game-of-life",
+    "version": "1.0.0",
+    "description": "My attempt at the Game of Life",
+    "main": "game.js",
+    "scripts": {
+        "test": "npm run test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/b3nThomas/game-of-life.git"
+    },
+    "keywords": [
+        "tdd",
+        "ava",
+        "typescript",
+        "scss",
+        "animation"
+    ],
+    "author": "b3nThomas",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/b3nThomas/game-of-life/issues"
+    },
+    "homepage": "https://github.com/b3nThomas/game-of-life#readme"
 }
