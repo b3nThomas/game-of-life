@@ -4,7 +4,9 @@
     "description": "My attempt at the Game of Life",
     "main": "game.js",
     "scripts": {
-        "test": "npm run test"
+        "lint": "npx tslint -p tsconfig.json",
+        "lint:fix": "npx tslint --fix -p tsconfig.json",
+        "test": "echo WADDUP"
     },
     "repository": {
         "type": "git",
@@ -22,5 +24,12 @@
     "bugs": {
         "url": "https://github.com/b3nThomas/game-of-life/issues"
     },
-    "homepage": "https://github.com/b3nThomas/game-of-life#readme"
+    "homepage": "https://github.com/b3nThomas/game-of-life#readme",
+    "dependencies": {
+        "ava": "^1.0.1"
+    },
+    "devDependencies": {
+        "tslint": "^5.12.1",
+        "typescript": "^3.2.2"
+    }
 }
