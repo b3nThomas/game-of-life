@@ -20,7 +20,7 @@
         "no-conditional-assignment": true,
         "no-constant-condition": true,
         "no-console": [
-            true,
+            false,
             "log",
             "error"
         ],
