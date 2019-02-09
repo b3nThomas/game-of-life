@@ -2,7 +2,7 @@
 My attempt at creating [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
 I'm going to try my best to TDD it using Ava then hopefully get into some animations further down the line.
 
-# Rules 😁👍
+## Da Rulez 😁👍
 - Any live cell with fewer than two live neighbours dies, as if by underpopulation.
 - Any live cell with two or three live neighbours lives on to the next generation.
 - Any live cell with more than three live neighbours dies, as if by overpopulation.
