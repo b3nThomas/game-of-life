@@ -1,6 +1,6 @@
 # game-of-life
 My attempt at creating [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
-I'm going to try my best to TDD it using Ava then hopefully get into some animations further down the line.
+I'm going to try my best to TDD it using AVA then hopefully get into some animations further down the line.
 
 ## Da Rulez 😁👍
 - Any live cell with fewer than two live neighbours dies, as if by underpopulation.

@@ -18,8 +18,8 @@ export const getNextCellState = (alive: CellState, aliveNeighbours: number): Cel
 
 export const getAliveNeighbours = (world: CellState[][], curX: number, curY: number) => {
     let total = 0 - world[curY][curX];
-    for (let i = curY - 1; i <= curY + 1; i++) {
-        total += (world[i][curX - 1] + world[i][curX] + world[i][curX + 1]);
+    for (let y = curY - 1; y <= curY + 1; y++) {
+        total += (world[y][curX - 1] + world[y][curX] + world[y][curX + 1]);
     }
     return total;
 };
