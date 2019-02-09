@@ -37,3 +37,15 @@ test('getAliveNeighbours returns the number of living neighbours', t => {
         t.is(result, s.expected);
     });
 });
+
+test('getAliveNeighbours treats out of range neighbours as dead', t => {
+    const scenarios: { expected: number, curX: number, curY: number, world: CellState[][] }[] = [
+        { expected: 0, curX: 0, curY: 0, world: [[1, 0], [0, 0]] },
+        { expected: 0, curX: 1, curY: 1, world: [[0, 0], [0, 1]] },
+        { expected: 3, curX: 0, curY: 0, world: [[1, 1], [1, 1]] }
+    ];
+    scenarios.forEach(s => {
+        const result = getAliveNeighbours(s.world, s.curX, s.curY);
+        t.is(result, s.expected);
+    });
+})
