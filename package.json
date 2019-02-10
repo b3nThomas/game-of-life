@@ -4,10 +4,12 @@
     "description": "My attempt at the Game of Life",
     "private": true,
     "scripts": {
-        "build": "npm run -s lint && npm run -s transpile && npm run webpack",
+        "build": "npm run -s lint && npm run -s transpile",
+        "build:web": "npm run -s build && npm run webpack",
         "lint": "npx tslint -p tsconfig.json",
         "lint:fix": "npx tslint --fix -p tsconfig.json",
-        "test": "npm run -s lint && npm run -s transpile && npx ava",
+        "start": "npm build && node game.js",
+        "test": "npm run -s build && npx ava",
         "transpile": "npx tsc -p .",
         "webpack": "npx webpack --config webpack.config.js"
     },

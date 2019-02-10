@@ -1,5 +1,5 @@
 import test from 'ava';
-import { createWorld, WorldConfig } from '../lib/world';
+import { createWorld, WorldConfig, getNextGenerationCoords, World } from '../lib/world';
 
 test('createWorld returns a 2D array of the correct height and width', t => {
     const scenarios: WorldConfig[] = [
@@ -48,4 +48,11 @@ test('createWorld ignores living cells that are out of range', t => {
         const world = createWorld(s);
         t.deepEqual(world, expected);
     });
+});
+
+test('getNextGenerationCoords returns the coordinates of the next generation of living cells', t => {
+    const world: World = [[0, 1, 0], [0, 1, 0], [0, 1, 0]];
+    const expected = [{ x: 0, y: 1 }, { x: 1, y: 1 }, { x: 2, y: 1 }];
+    const result = getNextGenerationCoords(world);
+    t.deepEqual(result, expected);
 });

@@ -1,17 +1,19 @@
-import { CellState } from './cell';
+import { CellState, getAliveNeighbours, getNextCellState } from './cell';
 
-type CellCoord = {
+type Coord = {
     x: number;
     y: number;
 };
 
+export type World = CellState[][];
+
 export type WorldConfig = {
     height: number;
     width: number;
-    livingCellCoords?: CellCoord[];
+    livingCellCoords?: Coord[];
 };
 
-export const createWorld = (config: WorldConfig): CellState[][] => {
+export const createWorld = (config: WorldConfig): World => {
     const world = [];
     const row = new Array(config.width).fill(0);
     for (let y = 0; y < config.height; y++) {
@@ -25,4 +27,18 @@ export const createWorld = (config: WorldConfig): CellState[][] => {
         });
     }
     return world;
+};
+
+export const getNextGenerationCoords = (world: World): Coord[] => {
+    const coords = [];
+    world.forEach((row, y) => {
+        row.forEach((state, x) => {
+            const aliveNeighbours = getAliveNeighbours(world, x, y);
+            const nextState = getNextCellState(state, aliveNeighbours);
+            if (nextState === 1) {
+                coords.push({ x, y });
+            }
+        });
+    });
+    return coords;
 };

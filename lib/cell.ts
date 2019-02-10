@@ -1,3 +1,5 @@
+import { World } from './world';
+
 export type CellState = 0 | 1;
 
 export const getNextCellState = (alive: CellState, aliveNeighbours: number): CellState => {
@@ -16,7 +18,7 @@ export const getNextCellState = (alive: CellState, aliveNeighbours: number): Cel
     }
 };
 
-export const getAliveNeighbours = (world: CellState[][], curX: number, curY: number) => {
+export const getAliveNeighbours = (world: World, curX: number, curY: number) => {
     let total = 0 - world[curY][curX];
     for (let y = curY - 1; y <= curY + 1; y++) {
         if (world[y]) {
