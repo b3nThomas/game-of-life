@@ -1,6 +1,6 @@
 import { CellState, getAliveNeighbours, getNextCellState } from './cell';
 
-type Coord = {
+export type Coord = {
     x: number;
     y: number;
 };

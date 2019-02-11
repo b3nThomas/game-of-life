@@ -5,10 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Game of Life</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="game.js"></script>
 </head>
 <body>
-    <h1>b3nThomas - Game of Life</h1>
+    <h1>Game of Life</h1>
+    <div class="ui">
+        <div class="btn-wrapper">
+            <button id="init-btn">START</button>
+        </div>
+        <div class="grid-selection">
+            <h2>Select Grid Size</h2>
+            <div class=btn-wrapper>
+                <button data-x="10" data-y="10">10 x 10</button>
+            </div>
+            <div class=btn-wrapper>
+                <button data-x="25" data-y="25">25 x 25</button>
+            </div>
+            <div class=btn-wrapper>
+                <button data-x="50" data-y="50">50 x 50</button>
+            </div>
+        </div>
+        <div class="grid-wrapper"></div>
+        <div class="cell-selection">
+            <h2>Select Cells then </h2>
+            <div class="btn-wrapper">
+                <button>START</button>
+            </div>
+        </div>
+        <div class='btn-wrapper'>
+            <button id="reset-btn">RESET</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>
