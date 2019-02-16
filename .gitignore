@@ -1,7 +1,8 @@
 node_modules
 package-lock.json
 
+!webpack.config.js
+
 **/*.js
 **/*.js.map
 
-!webpack.config.js
