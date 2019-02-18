@@ -3,6 +3,7 @@ import { killAllCells, drawLivingCells, drawGrid } from './lib/dom';
 
 class Game {
     private config: WorldConfig;
+    private mousedown: boolean;
 
     public init(): void {
         const initButton: HTMLElement = document.querySelector('#init-btn');
@@ -32,17 +33,34 @@ class Game {
     private selectCells(): void {
         const cellSelection: HTMLElement = document.querySelector('.cell-selection');
         cellSelection.style.display = 'block';
+        document.addEventListener('mousedown', () => {
+            this.mousedown = true;
+        });
+        document.addEventListener('mouseup', () => {
+            this.mousedown = false;
+        });
+
         const cells: HTMLElement[] = Array.from(document.querySelectorAll('.cell'));
         cells.forEach(cell => {
             cell.classList.add('selecting');
+            cell.addEventListener('mouseover', () => {
+                if (this.mousedown) {
+                    if (cell.classList.contains('selected')) {
+                        cell.classList.remove('selected');
+                    } else {
+                        cell.classList.add('selected');
+                    }
+                }
+            });
             cell.addEventListener('click', () => {
                 if (cell.classList.contains('selected')) {
                     cell.classList.remove('selected');
                 } else {
                     cell.classList.add('selected');
                 }
-            })
+            });
         });
+
         cellSelection.querySelector('button').addEventListener('click', () => {
             this.startGame(cells);
         });
@@ -64,10 +82,9 @@ class Game {
             }
         });
         this.config.livingCellCoords = livingCellCoords;
-        console.log(this.config);
         setInterval(() => {
             this.config = this.tick(this.config);
-        }, 200);
+        }, 150);
     }
 
     private tick(config: WorldConfig): WorldConfig {

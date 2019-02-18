@@ -74,8 +74,8 @@ button:focus {
 .grid {
     display: grid;
     margin: 0 auto;
-    width: 90vw;
-    height: 90vw;
+    width: 95vw;
+    height: 95vw;
     border: 1px solid #da4baa;
     box-shadow: 0 0 8px #ffffff;
     border-radius: 2px;
@@ -91,16 +91,16 @@ button:focus {
 
 .cell.selecting {
     cursor: cell;
-    transition: 0.2s ease;
+    transition: 0.15s ease;
 }
 
 .cell.selecting:hover {
     background-color: #da4baa;
-    transition: 0.2s ease;
+    transition: 0.15s ease;
 }
 
 .cell.selecting.selected {
-    transition: background-color 0.2s;
+    transition: background-color 0.15s;
     background-color: cyan;
 }
 .cell::before {
@@ -108,7 +108,7 @@ button:focus {
 }
 
 .alive {
-    transition: background-color 0.2s;
+    transition: background-color 0.15s;
     background-color: cyan;
 }
 
@@ -125,7 +125,7 @@ button:focus {
 
 @media (min-width: 1024px) {
     .grid {
-        width: 50vw;
-        height: 50vw;
+        width: 40vw;
+        height: 40vw;
     }
 }
